@@ -1,0 +1,4 @@
+# Ignore everything except files I care about
+*
+!init.el
+!early-init.el
