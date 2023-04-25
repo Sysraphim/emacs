@@ -119,6 +119,9 @@
 	   (org-log-into-drawer t)
 	   (org-return-follows-link t)))
 
+(setq org-todo-keywords
+      '((sequence "TODO(q)" "NEXT(w)" "PROJ(e)" "WAITING(r)" "DEFERRED(t)" "DELEGATED(z)" "|" "DONE(d)" "CANCELLED(c)")))
+
 ;; IDE Setup
 (use-package lsp-mode
   :custom
