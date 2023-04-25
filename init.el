@@ -43,7 +43,14 @@
   (global-unset-key (kbd "C-x c"))
   (global-set-key (kbd "C-c h") #'helm-command-prefix))
 
-(use-package helm-projectile)
+(use-package helm-projectile
+  :config (helm-projectile-on))
+
+(use-package helm-org
+  :init
+  (add-to-list 'helm-completing-read-handlers-alist '(org-capture . helm-org-completing-read-tags))
+  (add-to-list 'helm-completing-read-handlers-alist '(org-set-tags . helm-org-completing-read-tags)))
+
 
 (use-package company
   :custom (company-minimum-prefix-length 1)
