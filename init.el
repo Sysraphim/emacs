@@ -72,6 +72,17 @@
   :custom (which-key-idle-delay 0.0)
   :config (which-key-mode))
 
+;; Backup Settings
+(setq version-control t     ;; Use version numbers for backups.
+      kept-new-versions 10  ;; Number of newest versions to keep.
+      kept-old-versions 0   ;; Number of oldest versions to keep.
+      delete-old-versions t ;; Don't ask to delete excess backup versions.
+      backup-by-copying t   ;; Copy all files, don't rename them.
+      vc-make-backup-files t) ;; Also backup files, that are in vc
+
+(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
+(setq create-lockfiles nil)
+
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
   (load custom-file))
