@@ -58,8 +58,20 @@
 
   :config (global-company-mode))
 
-(use-package modus-themes
-  :config (load-theme 'modus-operandi-tinted t))
+(use-package material-theme
+  :config (load-theme 'material t))
+
+;; Prettier Modeline
+(use-package moody
+  :config
+  (setq x-underline-at-descent-line t)
+  (moody-replace-mode-line-buffer-identification)
+  (moody-replace-vc-mode)
+  (moody-replace-eldoc-minibuffer-message-function))
+
+;; Menu for minor modes
+(use-package minions
+  :config (minions-mode))
 
 ;; General Settings
 (setq ring-bell-function 'ignore) ;; Disable the blupp
