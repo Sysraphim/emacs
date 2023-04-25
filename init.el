@@ -97,6 +97,7 @@
 
 ;; Org Mode
 (use-package org
+  :straight (:type built-in)
   :bind (("C-c n a" . org-agenda)
 	 ("C-c n c" . org-capture))
   
