@@ -118,7 +118,7 @@
 			       "~/Nextcloud/Sync/org/agenda/inbox.org"))
 
 	   (org-capture-templates '(("t" "Todo [inbox]" entry
-				     (file+headline "~/Nextcloud/Sync/org/agenda/inbox.org" "Tasks")
+				     (file+headline "~/Nextcloud/Sync/org/agenda/inbox.org" "Inbox")
 				     "* TODO %i%?")
 				    ("T" "Tickler" entry
 				     (file+headline "~/Nextcloud/Sync/org/agenda/tickler.org" "Tickler")
