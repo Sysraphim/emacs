@@ -164,6 +164,10 @@
 
 ;; Zettelkasten
 (use-package denote
+  :hook (dired-mode . denote-dired-mode)
+  :custom ((denote-directory "~/Nextcloud/braincell")
+	   (denote-prompts '(signature title keywords)))
   :bind (("C-c d d" . denote)
+	 ("C-c d f" . denote-open-or-create)
 	 ("C-c d i" . denote-insert-link)
 	 ("C-c d I" . denote-link-insert-links-matching-regexp)))
