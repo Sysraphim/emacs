@@ -46,6 +46,9 @@
 (use-package helm-projectile
   :config (helm-projectile-on))
 
+(use-package helm-descbinds
+  :config (helm-descbinds-mode))
+
 (use-package helm-org
   :init
   (add-to-list 'helm-completing-read-handlers-alist '(org-capture . helm-org-completing-read-tags))
