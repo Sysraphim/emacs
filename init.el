@@ -50,6 +50,7 @@
   :config (helm-descbinds-mode))
 
 (use-package helm-org
+  :bind (("C-c n A" . helm-org-agenda-files-headings))
   :init
   (add-to-list 'helm-completing-read-handlers-alist '(org-capture . helm-org-completing-read-tags))
   (add-to-list 'helm-completing-read-handlers-alist '(org-set-tags . helm-org-completing-read-tags)))
