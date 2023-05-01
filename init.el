@@ -43,6 +43,8 @@
   (global-unset-key (kbd "C-x c"))
   (global-set-key (kbd "C-c h") #'helm-command-prefix))
 
+(use-package helm-lsp)
+
 (use-package helm-projectile
   :config (helm-projectile-on))
 
@@ -143,11 +145,26 @@
 
 ;; IDE Setup
 (use-package lsp-mode
+  :hook (lsp-mode . lsp-enable-which-key-integration)
   :custom
   (setq lsp-idle-delay 0.500) ;; LSP performance tuning
   (setq gc-cons-threshold 100000000)
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (lsp-keymap-prefix "C-c C-l"))
+
+;; Fix escape codes in compilation buffers
+(require 'ansi-color)
+(defun colorize-compilation-buffer ()
+  (ansi-color-apply-on-region compilation-filter-start (point)))
+(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+
+(use-package lsp-ui)
+
+(use-package dap-mode
+  :after lsp-mode
+  :config (dap-auto-configure-mode))
+
+(use-package lsp-treemacs)
 
 (use-package flycheck)
 
