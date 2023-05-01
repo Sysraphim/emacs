@@ -114,6 +114,8 @@
 ;; Org Mode
 (use-package org
   :straight (:type built-in)
+  :hook (org-mode . org-indent-mode)
+
   :bind (("C-c n a" . org-agenda)
 	 ("C-c n c" . org-capture))
   
