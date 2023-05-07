@@ -57,7 +57,6 @@
   (add-to-list 'helm-completing-read-handlers-alist '(org-capture . helm-org-completing-read-tags))
   (add-to-list 'helm-completing-read-handlers-alist '(org-set-tags . helm-org-completing-read-tags)))
 
-
 (use-package company
   :custom (company-minimum-prefix-length 1)
   (company-idle-delay 0)
@@ -138,8 +137,8 @@
 				     "* %? \n %^t")))
 
 	   (org-refile-targets '(("~/Nextcloud/Sync/org/agenda/gtd.org" :maxlevel . 3)
-				("~/Nextcloud/Sync/org/agenda/someday.org" :level . 1)
-				("~/Nextcloud/Sync/org/agenda/tickler.org" :maxlevel . 2)))
+				 ("~/Nextcloud/Sync/org/agenda/someday.org" :level . 1)
+				 ("~/Nextcloud/Sync/org/agenda/tickler.org" :maxlevel . 2)))
 
 	   (org-default-notes-file "~/Nextcloud/Sync/org/agenda/notes.org")
 	   (org-log-into-drawer t)
