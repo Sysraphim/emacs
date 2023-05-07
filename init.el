@@ -185,6 +185,9 @@
 
 (use-package magit)
 
+(use-package vterm
+  :bind ("<f12>" . vterm))
+
 ;; Zettelkasten
 (use-package denote
   :hook (dired-mode . denote-dired-mode)
