@@ -194,11 +194,26 @@
   :bind ("<f12>" . vterm))
 
 ;; Zettelkasten
-(use-package denote
-  :hook (dired-mode . denote-dired-mode)
-  :custom ((denote-directory "~/Nextcloud/braincell")
-	   (denote-prompts '(signature title keywords)))
-  :bind (("C-c d d" . denote)
-	 ("C-c d f" . denote-open-or-create)
-	 ("C-c d i" . denote-insert-link)
-	 ("C-c d I" . denote-link-insert-links-matching-regexp)))
+(defvar zk/directory "/home/mkrause/Nextcloud/Sync/braindump")
+
+(use-package org-roam
+  :config
+  (setq org-roam-directory (file-truename zk/directory))
+  (org-roam-db-autosync-mode)
+
+  (setq org-roam-mode-sections
+	(list #'org-roam-backlinks-section
+              #'org-roam-reflinks-section
+              ;; #'org-roam-unlinked-references-section
+              ))
+
+  (add-to-list 'display-buffer-alist
+               '("\\*org-roam\\*"
+		 (display-buffer-in-direction)
+		 (direction . right)
+		 (window-width . 0.33)
+		 (window-height . fit-window-to-buffer)))
+  :bind
+  (("C-c n r f" . org-roam-node-find)
+   ("C-c n r i" . org-roam-node-insert)
+   ("C-c n r b" . org-roam-buffer-toggle)))
