@@ -128,6 +128,11 @@
 	   (org-capture-templates '(("t" "Todo [inbox]" entry
 				     (file+headline "~/Nextcloud/Sync/org/agenda/inbox.org" "Inbox")
 				     "* TODO %i%?")
+
+				    ("e" "Zettelkasten" entry
+				     (file+headline "~/Nextcloud/Sync/braindump/kleinhirn.org" "Kleinhirn")
+				     "* %i%?")
+
 				    ("T" "Tickler" entry
 				     (file+headline "~/Nextcloud/Sync/org/agenda/tickler.org" "Tickler")
 				     "* %? \n %^t")))
