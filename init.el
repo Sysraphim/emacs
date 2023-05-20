@@ -147,6 +147,16 @@
 (setq org-todo-keywords
       '((sequence "TODO(q)" "NEXT(w)" "PROJ(e)" "WAITING(r)" "DEFERRED(t)" "DELEGATED(z)" "|" "DONE(d)" "CANCELLED(c)")))
 
+(use-package elfeed
+  :config
+  (setq elfeed-db-directory (expand-file-name "elfeed" user-emacs-directory)
+        elfeed-show-entry-switch 'display-buffer)
+  :bind
+  ("C-x w" . elfeed))
+(use-package elfeed-org
+  :config
+  (elfeed-org))
+
 ;; IDE Setup
 (use-package lsp-mode
   :hook (lsp-mode . lsp-enable-which-key-integration)
