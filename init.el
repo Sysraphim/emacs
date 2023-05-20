@@ -63,8 +63,8 @@
 
   :config (global-company-mode))
 
-(use-package material-theme
-  :config (load-theme 'material t))
+(use-package doom-themes
+  :config (load-theme 'doom-dark+ t))
 
 ;; Prettier Modeline
 (use-package moody
