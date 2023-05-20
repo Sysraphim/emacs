@@ -194,7 +194,7 @@
   (lsp-metals-show-implicit-conversions-and-classes t))
 
 (use-package projectile
-  :bind ("C-c p" . projectile-command-map)
+  :bind ("C-x p" . projectile-command-map)
   :config (projectile-mode))
 
 (use-package magit)
