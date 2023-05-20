@@ -182,6 +182,23 @@
 
 (use-package flycheck)
 
+
+(use-package lsp-pyright)
+
+(use-package python-mode
+  :custom (python-indent-guess-indent-offset-verbose nil)
+  :hook ((python-mode . lsp-deferred)
+	 (python-mode . blacken-mode)
+	 (python-mode . pyvenv-mode)
+	 (python-mode . pyvenv-tracking-mode)))
+
+(use-package pyvenv
+  :custom (pyvenv-default-virtual-env-name "venv"))
+
+(use-package numpydoc)
+
+(use-package blacken)
+
 (use-package scala-mode
   :hook (scala-mode . lsp-deferred))
 
