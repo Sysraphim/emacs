@@ -86,7 +86,7 @@
 (recentf-mode)
 
 (use-package which-key
-  :custom (which-key-idle-delay 0.0)
+  :custom (which-key-idle-delay 0.8)
   :config (which-key-mode))
 
 ;; Backup Settings
