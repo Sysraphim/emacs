@@ -164,7 +164,7 @@
   (setq lsp-idle-delay 0.500) ;; LSP performance tuning
   (setq gc-cons-threshold 100000000)
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
-  (lsp-keymap-prefix "C-c C-l"))
+  (lsp-keymap-prefix "C-x L"))
 
 ;; Fix escape codes in compilation buffers
 (require 'ansi-color)
